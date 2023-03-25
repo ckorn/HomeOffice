@@ -17,8 +17,9 @@ if(!homeOfficeDayDictionary.ContainsKey(today))
 	{
 		Console.WriteLine("HomeOffice? (J/N)");
 		answer=Console.ReadLine() ?? string.Empty;
-	}while((answer.ToUpper() != "J") && (answer.ToUpper() != "N"));
-	bool homeOffice=(answer.ToUpper() == "J");
+		answer=answer.ToUpper();
+	}while((answer != "J") && (answer != "N"));
+	bool homeOffice=(answer == "J");
 	AddEntry(today, homeOffice);
 }
 
